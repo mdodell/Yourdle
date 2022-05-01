@@ -1,0 +1,11 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Run unit tests
+npm test
+
+# Run e2e tests
+npx playwright test
+
+# Run linting
+npm run lint

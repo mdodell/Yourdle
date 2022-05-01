@@ -1,0 +1,38 @@
+{
+	"plugins": ["@typescript-eslint", "import"],
+	"extends": [
+		"next/core-web-vitals",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:storybook/recommended",
+		"prettier"
+	],
+	"parser": "@typescript-eslint/parser",
+	"rules": {
+		// I suggest you add those two rules:
+		"@typescript-eslint/no-unused-vars": "error",
+		"@typescript-eslint/no-explicit-any": "error",
+		"semi": "error",
+		"no-unused-vars": "off",
+		"object-curly-spacing": ["error", "always"],
+		"import/order": [
+			"error",
+			{
+				"groups": ["builtin", "external", "internal"],
+				"pathGroups": [
+					{
+						"pattern": "react",
+						"group": "external",
+						"position": "before"
+					}
+				],
+				"pathGroupsExcludedImportTypes": ["react"],
+				"newlines-between": "always",
+				"alphabetize": {
+					"order": "asc",
+					"caseInsensitive": true
+				}
+			}
+		],
+		"import/newline-after-import": ["error"]
+	}
+}
