@@ -1,21 +1,18 @@
+import ThemeSwitch from '@atoms/ThemeSwitch';
 import {
 	generateStorybookConfig,
 	generateStorybookTemplate,
 } from '@utils/storybook/storyGenerationUtils';
 
-import TestComponent from './TestComponent';
-
 const config = generateStorybookConfig({
-	Component: TestComponent,
+	Component: ThemeSwitch,
 	variant: 'atom',
-	argTypes: {
-		name: {
-			defaultValue: 'World',
-		},
+	parameters: {
+		layout: 'padded',
 	},
 });
 
-const Template = generateStorybookTemplate(TestComponent);
+const Template = generateStorybookTemplate(ThemeSwitch);
 
 export const BasicExample = Template.bind({});
 

@@ -23,7 +23,8 @@
 			"@providers/*": ["providers/*"],
 			"@hooks/*": ["hooks/*"],
 			"@constants/*": ["constants/*"],
-			"@utils/*": ["utils/*"]
+			"@utils/*": ["utils/*"],
+			"@translations/*": ["translations/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
