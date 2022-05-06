@@ -7,18 +7,26 @@ module.exports = {
 		'@storybook/addon-essentials',
 		'@storybook/addon-interactions',
 		'@storybook/addon-viewport',
+		'storybook-dark-mode',
 	],
 	framework: '@storybook/react',
 	core: {
 		builder: '@storybook/builder-webpack5',
 	},
-	webpackFinal: async (config) => {
+	staticDirs: ['./public'],
+	webpackFinal: async (config, { isServer }) => {
 		config.resolve.plugins = [
 			...(config.resolve.plugins || []),
 			new TsconfigPathsPlugin({
 				extensions: config.resolve.extensions,
 			}),
 		];
+
+		config.resolve.alias = {
+			...config.resolve.alias,
+			'next-i18next': 'react-i18next',
+		};
+
 		return config;
 	},
 };
